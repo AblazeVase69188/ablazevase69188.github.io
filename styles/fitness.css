@@ -1,0 +1,73 @@
+html {
+  font-size: 10px;
+  font-family: "Noto Sans SC", sans-serif;
+  background-color: lavenderblush;
+}
+
+body {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+  background-color: lavender;
+  border: 2px solid black;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px 0;
+  color: #574b8a;
+  text-shadow: 3px 3px 1px skyblue;
+  font-size: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+fieldset {
+  margin: 0 0 16px 0;
+}
+
+legend {
+  font-weight: bold;
+}
+
+label {
+  margin-right: 16px;
+}
+
+input[type="number"] {
+  width: 90px;
+  font-size: 16px;
+}
+
+#run-minutes,
+#run-seconds {
+  width: 60px;
+}
+
+button {
+  font-size: 16px;
+  padding: 6px 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #999;
+  padding: 4px 6px;
+  font-size: 15px;
+  text-align: center;
+}
+
+#total {
+  font-size: 20px;
+  font-weight: bold;
+}

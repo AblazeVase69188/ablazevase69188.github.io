@@ -1,32 +1,177 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>25w43a released</title>
-    <link href="styles/style.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Noto+Sans+SC"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <h1>25w43a</h1>
-    <img src="images/25w43a.png" alt="Minecraft Java Edition Snapshot 25w43a" />
-    <p>
-      25w43a是Java版1.21.11的第3个快照，发布于2025年10月21日，修复了一些漏洞。
-    </p>
-    <ul>
-      <li>将数据包版本号更改为91.0。</li>
-      <li>将资源包版本号更改为71.0。</li>
-      <li>修复了28个漏洞。</li>
-    </ul>
-    <p>
-      查看<a href="https://zh.minecraft.wiki/w/25w43a"
-        >25w43a - Minecraft Wiki</a
-      >。
-    </p>
-    <button>Change user</button>
-    <script src="scripts/main.js"></script>
-  </body>
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>lab</title>
+        <link rel="stylesheet" href="styles/fitness.css" />
+    </head>
+    <body>
+        <h1>大学生体质测试总分计算</h1>
+
+        <form id="fitness-form">
+            <fieldset>
+                <legend>身份</legend>
+                <p>
+                    <label
+                        ><input
+                            type="radio"
+                            name="gender"
+                            value="male"
+                            checked
+                        />男生</label
+                    >
+                    <label
+                        ><input
+                            type="radio"
+                            name="gender"
+                            value="female"
+                        />女生</label
+                    >
+                </p>
+                <p>
+                    <label
+                        ><input
+                            type="radio"
+                            name="grade"
+                            value="junior"
+                            checked
+                        />大一大二</label
+                    >
+                    <label
+                        ><input
+                            type="radio"
+                            name="grade"
+                            value="senior"
+                        />大三大四</label
+                    >
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>测试结果</legend>
+                <p>
+                    <label
+                        >身高（厘米）<input
+                            id="height"
+                            type="number"
+                            step="0.1"
+                            min="0"
+                            required
+                    /></label>
+                </p>
+                <p>
+                    <label
+                        >体重（千克）<input
+                            id="weight"
+                            type="number"
+                            step="0.1"
+                            min="0"
+                            required
+                    /></label>
+                </p>
+                <p>
+                    <label
+                        >肺活量（毫升）<input
+                            id="vital-capacity"
+                            type="number"
+                            step="1"
+                            min="0"
+                            required
+                    /></label>
+                </p>
+                <p>
+                    <label
+                        >50米跑（秒）<input
+                            id="sprint-50"
+                            type="number"
+                            step="0.1"
+                            min="0"
+                            required
+                    /></label>
+                </p>
+                <p>
+                    <label
+                        >坐位体前屈（厘米）<input
+                            id="sit-and-reach"
+                            type="number"
+                            step="0.1"
+                            required
+                    /></label>
+                </p>
+                <p>
+                    <label
+                        >立定跳远（厘米）<input
+                            id="long-jump"
+                            type="number"
+                            step="1"
+                            min="0"
+                            required
+                    /></label>
+                </p>
+                <p>
+                    <label
+                        ><span id="strength-label">引体向上（次）</span
+                        ><input
+                            id="strength"
+                            type="number"
+                            step="1"
+                            min="0"
+                            required
+                    /></label>
+                </p>
+                <p>
+                    <label id="run-label">1000米跑（分·秒）</label>
+                    <input
+                        id="run-minutes"
+                        type="number"
+                        step="1"
+                        min="0"
+                        required
+                    />
+                    分
+                    <input
+                        id="run-seconds"
+                        type="number"
+                        step="1"
+                        min="0"
+                        max="59"
+                        required
+                    />
+                    秒
+                </p>
+            </fieldset>
+
+            <p>
+                <label
+                    ><input
+                        type="checkbox"
+                        id="reverse-mode"
+                    />反推及格成绩（把其中一项留空）</label
+                >
+            </p>
+
+            <button type="submit">计算总分</button>
+        </form>
+
+        <section id="result" hidden>
+            <h2>计算结果</h2>
+            <table id="result-table">
+                <thead>
+                    <tr>
+                        <th>项目</th>
+                        <th>成绩</th>
+                        <th>单项得分</th>
+                        <th>权重</th>
+                        <th>折算分</th>
+                        <th>加分</th>
+                    </tr>
+                </thead>
+                <tbody id="result-body"></tbody>
+            </table>
+            <p id="total"></p>
+        </section>
+
+        <script src="scripts/fitness.js"></script>
+    </body>
 </html>
